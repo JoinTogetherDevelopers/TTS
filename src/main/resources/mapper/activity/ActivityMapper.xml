@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.dorageecorp.activity.dao.ActivityMapper">
+
+	<select id="selectActivityList" resultType="Activity">
+		SELECT atvt_pk									AS activityPk
+			 , no										AS activityNo
+			 , title									AS activityTitle
+			 , content									AS activityContent
+			 , (
+			 	SELECT comm_cd_nm
+			  	  FROM t_comm_cd
+			  	 WHERE comm_cd = status
+			   )										AS activityStatus
+			 , (
+			 	SELECT username
+			 	  FROM t_user
+			 	 WHERE user_id = crer_id
+			   )										AS creatorName
+			 , DATE_FORMAT(cre_ymdt, "%Y-%m-%d %H:%i")	AS createDate
+			 , modr_id									AS modifierId
+			 , DATE_FORMAT(mod_ymdt, "%Y-%m-%d %H:%i")	AS modifiedDate
+		  FROM t_atvt
+	     WHERE no <![CDATA[>]]> 0
+		 ORDER BY no DESC
+		 LIMIT 10		
+	</select>
+	
+	<select id="selectActivityDetail" resultType="Activity">
+		SELECT atvt_pk									AS activityPk
+			 , no										AS activityNo
+			 , title									AS activityTitle
+			 , content									AS activityContent
+			 , (
+			 	SELECT comm_cd_nm
+			  	  FROM t_comm_cd
+			  	 WHERE comm_cd = status
+			   )										AS activityStatus
+			 , (
+			 	SELECT username
+			 	  FROM t_user
+			 	 WHERE user_id = crer_id
+			   )										AS creatorName
+			 , DATE_FORMAT(cre_ymdt, "%Y-%m-%d %H:%i")	AS createDate
+			 , modr_id									AS modifierId
+			 , DATE_FORMAT(mod_ymdt, "%Y-%m-%d %H:%i")	AS modifiedDate
+		  FROM t_atvt
+	     WHERE no = #{no}
+	</select>
+	
+	<select id="selectColumnNames" resultType="java.lang.String">
+		SELECT content
+		  FROM t_job_dtl
+		 WHERE job_mst_pk = 'job_mst_pk_0001'
+		   AND job_mst_seq = 1
+		   AND header_yn = 'Y'
+		 ORDER BY col_order ASC;
+	</select>
+	
+	<select id="selectColumnData" resultType="java.lang.String">
+		SELECT content
+		  FROM t_job_dtl
+		 WHERE header_yn = 'N'
+		 ORDER BY row_order
+		 	 , col_order
+	</select>
+</mapper>
