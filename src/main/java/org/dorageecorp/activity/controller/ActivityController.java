@@ -27,12 +27,12 @@ public class ActivityController {
 		ModelAndView mav = new ModelAndView("/activity/activityList");
 
 		List<Activity> activityList = null;
-		log.info("activityList");
+//		log.info("activityList");
 		try {
 			activityList = activityBO.getActivityList();
 			mav.addObject("activityList", activityList);
 		} catch (Exception e) {
-			log.error(ReflectionToStringBuilder.toString(activityList), e);
+//			log.error(ReflectionToStringBuilder.toString(activityList), e);
 		}
 
 		return mav;
@@ -48,7 +48,7 @@ public class ActivityController {
 			activity = activityBO.getActivityDetail(no);
 			mav.addObject("activity", activity);
 		} catch (Exception e) {
-			log.error(ReflectionToStringBuilder.toString(activity), e);
+//			log.error(ReflectionToStringBuilder.toString(activity), e);
 		}
 
 		return mav;
@@ -65,7 +65,7 @@ public class ActivityController {
 			columnNames = activityBO.getColumnNames();
 			columnData = activityBO.getColumnData();
 		} catch (Exception e) {
-			log.error("test", e);
+//			log.error("test", e);
 		}
 
 		mav.addObject("columnNames", columnNames);

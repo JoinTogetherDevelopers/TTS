@@ -28,7 +28,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/kcmsus/activitySchedule", method = RequestMethod.GET)
 	public String activitySchedule(Locale locale, Model model) {
-		 log.info("활동 스케쥴 진입");
+//		 log.info("활동 스케쥴 진입");
 
 		return "schedule/activitySchedule";
 	}
