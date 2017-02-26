@@ -3,7 +3,7 @@
 
 <mapper namespace="org.dorageecorp.activity.dao.ActivityMapper">
 
-	<select id="selectActivityList" resultType="Activity">
+	<select id="selectActivityList" resultType="org.dorageecorp.activity.model.Activity">
 		SELECT atvt_pk									AS activityPk
 			 , no										AS activityNo
 			 , title									AS activityTitle
@@ -27,7 +27,7 @@
 		 LIMIT 10		
 	</select>
 	
-	<select id="selectActivityDetail" resultType="Activity">
+	<select id="selectActivityDetail" resultType="org.dorageecorp.activity.model.Activity">
 		SELECT atvt_pk									AS activityPk
 			 , no										AS activityNo
 			 , title									AS activityTitle
