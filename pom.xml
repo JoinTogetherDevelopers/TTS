@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>BTMSS</name>
+	<name>TTS</name>
 	<description>project for Spring Boot</description>
 
 	<parent>
@@ -19,6 +19,7 @@
 	</parent>
 
 	<properties>
+		<war.filename>ROOT</war.filename>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
@@ -103,12 +104,6 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
-		<!-- <dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
-			<scope>provided</scope>
-		</dependency> -->
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
@@ -128,6 +123,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>${war.filename}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

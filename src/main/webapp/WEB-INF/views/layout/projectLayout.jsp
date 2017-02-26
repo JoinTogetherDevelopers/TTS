@@ -1,13 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
+<%@ taglib uri="http://www.opensymphony.com/sitemesh/page" prefix="page"%>
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>       
+	    <sitemesh:write property='head'/>
 	     
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>
-			<!--<decorator:title default="project Layout Test" />          -->
+			<sitemesh:write property='title'/>         
 		</title>
 		<link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	    <link href="/resources/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -57,10 +60,10 @@
 	
 	    <!-- ChartJS-->
 	    <script src="/resources/bootstrap/js/plugins/chartJs/Chart.min.js"></script>
-	    <!-- ï¿½Æ·ï¿½ main.jsï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
+	    <!-- ¾Æ·¡ main.js´Â »èÁ¦ ¿¹Á¤ -->
 	    <script src="/resources/javascript/main.js"></script>	    
 	    
-	    <decorator:head />
+	    <sitemesh:write property='head'/> 
 	</head> 
 
 	<body>
@@ -89,40 +92,40 @@
 	                    </div>
 	                </li>
 	                <li>
-	                    <a href="javascript:goToService()" id="projectMain"><i class="fa fa-th-large"></i> <span class="nav-label">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® È¨</span></a>                    
+	                    <a href="javascript:goToService()" id="projectMain"><i class="fa fa-th-large"></i> <span class="nav-label">ÇÁ·ÎÁ§Æ® È¨</span></a>                    
 	                </li>
 	                <li>
-	                    <a href="#"><i class="fa fa-table"></i> <span class="nav-label">ï¿½×½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½</span><span class="fa arrow"></span></a>
+	                    <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Å×½ºÆ® ÀÏÁ¤</span><span class="fa arrow"></span></a>
 	                    <ul class="nav nav-second-level collapse">
-	                        <li><a href="javascript:goToActivitySchedule()">È°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</a></li>
-	                        <li><a href="#">ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</a></li>
-	                        <li><a href="#">ï¿½×½ï¿½ï¿½Íºï¿½ ï¿½ï¿½ï¿½ï¿½</a></li>
+	                        <li><a href="javascript:goToActivitySchedule()">È°µ¿º° ÀÏÁ¤</a></li>
+	                        <li><a href="#">ÀÛ¾÷º° ÀÏÁ¤</a></li>
+	                        <li><a href="#">Å×½ºÅÍº° ÀÏÁ¤</a></li>
 	                    </ul>
 	                </li>
 	
 	                <li>
-	                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">ï¿½×½ï¿½Æ® È°ï¿½ï¿½</span><span class="fa arrow"></span></a>
+	                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Å×½ºÆ® È°µ¿</span><span class="fa arrow"></span></a>
 	                    <ul class="nav nav-second-level collapse">
-	                        <li><a href="javascript:goToActivityList()">ï¿½ï¿½Ã¼ È°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</a></li>
-	                        <li><a href="#">ï¿½Ò´ï¿½ï¿½ï¿½ È°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</a></li>
+	                        <li><a href="javascript:goToActivityList()">ÀüÃ¼ È°µ¿ ¸ñ·Ï</a></li>
+	                        <li><a href="#">ÇÒ´çµÈ È°µ¿ ¸ñ·Ï</a></li>
 	                    </ul>
 	                </li>
 	                <li>
-	                    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">ï¿½Û¾ï¿½ ï¿½ï¿½ï¿½Ã¸ï¿½</span><span class="fa arrow"></span></a>
+	                    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">ÀÛ¾÷ ÅÛÇÃ¸´</span><span class="fa arrow"></span></a>
 	                    <ul class="nav nav-second-level collapse">
-	                        <li><a href="javascript:getJobTemplateAllList()">ï¿½Û¾ï¿½ ï¿½ï¿½ï¿½Ã¸ï¿½ ï¿½ï¿½ï¿½ï¿½</a></li>
-	                        <li><a href="#">ï¿½ï¿½ ï¿½Û¾ï¿½ ï¿½ï¿½ï¿½ï¿½</a></li>
+	                        <li><a href="javascript:getJobTemplateAllList()">ÀÛ¾÷ ÅÛÇÃ¸´ ¸ñ·Ï</a></li>
+	                        <li><a href="#">³» ÀÛ¾÷ ¸ñ·Ï</a></li>
 	                    </ul>
 	                </li>
 	                <li>
-	                    <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">ï¿½ï¿½ï¿½ï¿½</span><span class="fa arrow"></span></a>
+	                    <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">Åë°è</span><span class="fa arrow"></span></a>
 	                    <ul class="nav nav-second-level collapse">
-	                        <li><a href="#">ï¿½×½ï¿½ï¿½ï¿½ ï¿½ï¿½</a></li>
-	                        <li><a href="#">È¯ï¿½ï¿½ ï¿½ï¿½</a></li>
+	                        <li><a href="#">Å×½ºÅÍ º°</a></li>
+	                        <li><a href="#">È¯°æ º°</a></li>
 	                    </ul>
 	                </li>
 	                <li>
-	                    <a href="#"><i class="fa fa-database"></i> <span class="nav-label">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½</span></a>
+	                    <a href="#"><i class="fa fa-database"></i> <span class="nav-label">ÇÁ·ÎÁ§Æ® °ü¸®</span></a>
 	                </li>
 	            </ul>
 	        </div>
