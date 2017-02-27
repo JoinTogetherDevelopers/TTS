@@ -1,8 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
-<%@ taglib uri="http://www.opensymphony.com/sitemesh/page" prefix="page"%>
- 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html>
 	<head>       
 	    <sitemesh:write property='head'/>
@@ -60,7 +57,7 @@
 	
 	    <!-- ChartJS-->
 	    <script src="/resources/bootstrap/js/plugins/chartJs/Chart.min.js"></script>
-	    <!-- ╬ф╥║ main.js╢б ╩Ха╕ ©╧а╓ -->
+	    <!-- Л∙└К·≤ main.jsК┼■ Л┌╜Л═° Л≤┬Л═∙ -->
 	    <script src="/resources/javascript/main.js"></script>	    
 	    
 	    <sitemesh:write property='head'/> 
@@ -92,40 +89,40 @@
 	                    </div>
 	                </li>
 	                <li>
-	                    <a href="javascript:goToService()" id="projectMain"><i class="fa fa-th-large"></i> <span class="nav-label">га╥на╖ф╝ х╗</span></a>                    
+	                    <a href="javascript:goToService()" id="projectMain"><i class="fa fa-th-large"></i> <span class="nav-label">М■└К║°Л═²М┼╦ М≥┬</span></a>                    
 	                </li>
 	                <li>
-	                    <a href="#"><i class="fa fa-table"></i> <span class="nav-label">ев╫╨ф╝ юоа╓</span><span class="fa arrow"></span></a>
+	                    <a href="#"><i class="fa fa-table"></i> <span class="nav-label">М┘▄Л┼╓М┼╦ Л²╪Л═∙</span><span class="fa arrow"></span></a>
 	                    <ul class="nav nav-second-level collapse">
-	                        <li><a href="javascript:goToActivitySchedule()">х╟╣©╨╟ юоа╓</a></li>
-	                        <li><a href="#">юш╬В╨╟ юоа╓</a></li>
-	                        <li><a href="#">ев╫╨ем╨╟ юоа╓</a></li>
+	                        <li><a href="javascript:goToActivitySchedule()">М≥°К▐≥КЁ└ Л²╪Л═∙</a></li>
+	                        <li><a href="#">Л·▒Л≈┘КЁ└ Л²╪Л═∙</a></li>
+	                        <li><a href="#">М┘▄Л┼╓М└╟КЁ└ Л²╪Л═∙</a></li>
 	                    </ul>
 	                </li>
 	
 	                <li>
-	                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">ев╫╨ф╝ х╟╣©</span><span class="fa arrow"></span></a>
+	                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">М┘▄Л┼╓М┼╦ М≥°К▐≥</span><span class="fa arrow"></span></a>
 	                    <ul class="nav nav-second-level collapse">
-	                        <li><a href="javascript:goToActivityList()">юЭц╪ х╟╣© ╦Я╥о</a></li>
-	                        <li><a href="#">гр╢Г╣х х╟╣© ╦Я╥о</a></li>
+	                        <li><a href="javascript:goToActivityList()">Л═└Л╡╢ М≥°К▐≥ К╙╘К║²</a></li>
+	                        <li><a href="#">М∙═К▀╧К░° М≥°К▐≥ К╙╘К║²</a></li>
 	                    </ul>
 	                </li>
 	                <li>
-	                    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">юш╬В ешгц╦╢</span><span class="fa arrow"></span></a>
+	                    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Л·▒Л≈┘ М┘°М■▄К╕©</span><span class="fa arrow"></span></a>
 	                    <ul class="nav nav-second-level collapse">
-	                        <li><a href="javascript:getJobTemplateAllList()">юш╬В ешгц╦╢ ╦Я╥о</a></li>
-	                        <li><a href="#">Ё╩ юш╬В ╦Я╥о</a></li>
+	                        <li><a href="javascript:getJobTemplateAllList()">Л·▒Л≈┘ М┘°М■▄К╕© К╙╘К║²</a></li>
+	                        <li><a href="#">К┌╢ Л·▒Л≈┘ К╙╘К║²</a></li>
 	                    </ul>
 	                </li>
 	                <li>
-	                    <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">еК╟Х</span><span class="fa arrow"></span></a>
+	                    <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">М├╣ЙЁ└</span><span class="fa arrow"></span></a>
 	                    <ul class="nav nav-second-level collapse">
-	                        <li><a href="#">ев╫╨ем ╨╟</a></li>
-	                        <li><a href="#">х╞╟Ф ╨╟</a></li>
+	                        <li><a href="#">М┘▄Л┼╓М└╟ КЁ└</a></li>
+	                        <li><a href="#">М≥≤Й╡╫ КЁ└</a></li>
 	                    </ul>
 	                </li>
 	                <li>
-	                    <a href="#"><i class="fa fa-database"></i> <span class="nav-label">га╥на╖ф╝ ╟Э╦╝</span></a>
+	                    <a href="#"><i class="fa fa-database"></i> <span class="nav-label">М■└К║°Л═²М┼╦ Й╢─К╕╛</span></a>
 	                </li>
 	            </ul>
 	        </div>
@@ -146,10 +143,7 @@
 		            </ul>
 		        </nav>
 		    </div>
-
-				
-			<decorator:body />
-				
+				<sitemesh:write property='body'/>
 		</div>
 	</div>
 	 
