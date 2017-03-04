@@ -24,13 +24,14 @@ public class JobController {
 	/**
 	 * 전체 작업 템플릿
 	 */
-	@RequestMapping(value = "/project/{projectId}/jobTemplateAllList", method = RequestMethod.GET)
-	public ModelAndView getJobTemplateAllList(@PathVariable String projectId) {
+	@RequestMapping(value = "/project/jobTemplateAllList", method = RequestMethod.GET)
+	public ModelAndView getJobTemplateAllList() {
 		ModelAndView mav = new ModelAndView("/job/jobTemplateAllList");
+		System.out.print("asdfsdf");
 
-		List<JobVersionTemplate> jobTemplateAllList = jobBO.getJobTemplateAllList(projectId);
+//		List<JobVersionTemplate> jobTemplateAllList = jobBO.getJobTemplateAllList(projectId);
 
-		mav.addObject("jobTemplateAllList", jobTemplateAllList);
+//		mav.addObject("jobTemplateAllList", jobTemplateAllList);
 
 		return mav;
 	}
