@@ -14,11 +14,11 @@ public class TTSSiteMeshFilter extends ConfigurableSiteMeshFilter {
 	@Override
 	protected void applyCustomConfiguration(SiteMeshFilterBuilder builder) {
 		builder.addDecoratorPath("/", "/WEB-INF/views/layout/mainLayout.jsp");
-		builder.addDecoratorPath("/main", "/WEB-INF/views/layout/mainLayout.jsp");
-		builder.addDecoratorPath("/login", "/WEB-INF/views/layout/mainLayout.jsp");
+		builder.addDecoratorPath("/main", "/WEB-INF/views/layout/projectLayout.jsp");
 		builder.addDecoratorPath("/project/**", "/WEB-INF/views/layout/projectLayout.jsp");
 		builder.addDecoratorPath("/kcmsus/**", "/WEB-INF/views/layout/projectLayout.jsp");
 		builder.addExcludedPath("/noneProject");
+		builder.addExcludedPath("/register");
 	}
 
 }

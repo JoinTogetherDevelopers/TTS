@@ -26,7 +26,6 @@ public class TTSInitialzrWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/").setViewName("/user/login");
 		registry.addViewController("/login").setViewName("/user/login");
-		registry.addViewController("/register").setViewName("/user/register");
 	}
 
 	@Bean

@@ -11,6 +11,8 @@ import org.dorageecorp.util.ServiceConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,26 +26,25 @@ public class UserController {
 	@Autowired
 	private UserBO userBO;
 
-	@RequestMapping(value = "/trylogin", method = RequestMethod.POST)
-	public @ResponseBody String trylogin(HttpServletResponse response, @Valid User user, BindingResult result) {
+	@PostMapping(value = "/trylogin")
+	public String trylogin(HttpServletResponse response, @Valid User user, BindingResult result) {
 		user.setUserId(StringUtils.upperCase(user.getUserId()));
-
+		String url = "/main";
 		if (result.hasErrors()) {
-			return ServiceConstant.FAIL;
+			url = "/login";
 		}
-
-		if (userBO.isValidUser(user) == false) {
-			return ServiceConstant.FAIL;
-		}
+		// if (userBO.isValidUser(user) == false) {
+		// return ServiceConstant.FAIL;
+		// }
 
 		CookieUtil.createCookie(response, "userId", user.getUserId(), ServiceConstant.ONE_DAY);
 
-		return ServiceConstant.SUCCESS;
+		return "redirect:" + url;
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public @ResponseBody String doregister() {
-		return "/user/register";
+	public String doregister() {
+		return "user/register";
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -52,14 +53,14 @@ public class UserController {
 			return ServiceConstant.FAIL;
 		}
 
-		if (userBO.isDuplicationID(user.getUserId())) {
-			return ServiceConstant.DUPLICATION_ID;
-		}
+		// if (userBO.isDuplicationID(user.getUserId())) {
+		// return ServiceConstant.DUPLICATION_ID;
+		// }
 
 		String message = null;
 
 		try {
-			userBO.registerUser(user);
+			// userBO.registerUser(user);
 			message = ServiceConstant.SUCCESS;
 		} catch (Exception e) {
 			// log.error(String.valueOf(user), e);
@@ -69,7 +70,7 @@ public class UserController {
 		return message;
 	}
 
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	@GetMapping(value = "/logout")
 	public String logout(HttpServletResponse response, String userId) {
 		CookieUtil.removeCookie(response, "userId", userId);
 		return "user/login";
