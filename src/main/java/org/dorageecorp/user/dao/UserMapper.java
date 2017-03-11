@@ -9,4 +9,6 @@ public interface UserMapper {
 	public boolean isDuplicationID(String id);
 
 	public void insertUser(User user);
+	
+	public User getTempUser(int userNo);
 }
