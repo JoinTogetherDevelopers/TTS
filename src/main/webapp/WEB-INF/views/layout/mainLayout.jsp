@@ -58,7 +58,7 @@
 	
 	    <!-- ChartJS-->
 	    <script src="/resources/bootstrap/js/plugins/chartJs/Chart.min.js"></script>
-	    <script src="/resources/bootstrap/js/javascript/main.js"></script>
+	    <script src="/resources/javascript/main.js"></script>
 	     <sitemesh:write property='head'/>
 	</head> 
 

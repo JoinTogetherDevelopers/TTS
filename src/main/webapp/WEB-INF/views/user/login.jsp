@@ -15,9 +15,9 @@
 
             </div>
             <h3>Welcome to BTMS</h3>
-            <form class="m-t" id="loginForm" role="form" id="loginForm" action="/trylogin" method="post">
+            <form class="m-t" id="loginForm" role="form" id="loginForm" action="/login" method="post">
                 <div class="form-group">
-                    <input type="text" name="userId" class="form-control" placeholder="ID" required/>
+                    <input type="text" name="username" class="form-control" placeholder="ID" required/>
                 </div>
                 <div class="form-group">
                     <input type="password" name="password" class="form-control" placeholder="Password" required/>
