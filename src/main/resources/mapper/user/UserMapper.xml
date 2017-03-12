@@ -5,19 +5,19 @@
 
 	<select id="isValidUser" resultType="boolean">
 		SELECT COUNT(1)
-		  FROM t_user
+		  FROM tUser
 		 WHERE user_id = #{userId}
 		   AND pwd = #{password}
 	</select>
 	
 	<select id="isDuplicationID" resultType="boolean">
 		SELECT COUNT(1)
-		  FROM t_user
+		  FROM tUser
 		 WHERE user_id = #{userId}
 	</select>
 	
 	<select id="insertUser" resultType="boolean">
-		INSERT INTO t_user
+		INSERT INTO tUser
 		VALUES
 		(
 			  #{userId}
@@ -30,4 +30,12 @@
 			, now()
 		)
 	</select>	
+	
+	<select id="getUser" parameterType="String" resultType="User">
+		SELECT name AS userName
+		FROM tUser
+		WHERE userid = #{userId}
+	</select>
+	
+	
 </mapper>

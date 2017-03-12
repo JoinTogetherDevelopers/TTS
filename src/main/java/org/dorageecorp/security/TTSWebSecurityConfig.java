@@ -1,4 +1,4 @@
-package org.dorageecorp;
+package org.dorageecorp.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

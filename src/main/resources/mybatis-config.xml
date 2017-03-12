@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<package name="org.dorageecorp" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="mapper/activity/ActivityMapper.xml" />
+		<mapper resource="mapper/board/BoardMapper.xml" />
+		<mapper resource="mapper/job/JobMapper.xml" />
+		<mapper resource="mapper/main/MainMapper.xml" />
+		<mapper resource="mapper/project/ProjectMapper.xml" />
+		<mapper resource="mapper/user/UserMapper.xml" />
+		<mapper resource="mapper/MemberMapper.xml" />
+	</mappers>
+</configuration>

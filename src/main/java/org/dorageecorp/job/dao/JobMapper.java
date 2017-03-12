@@ -3,8 +3,10 @@ package org.dorageecorp.job.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.dorageecorp.job.model.JobVersionTemplate;
 
+@Mapper
 public interface JobMapper {
 
 	List<JobVersionTemplate> selectJobTemplateAllList(String projectId);
