@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void createUser(User user) {
 		String rawPassword = user.getPassword();
-		PasswordEncoder passwordEncoder= new BCryptPasswordEncoder();
+		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		user.setPassword(passwordEncoder.encode(rawPassword));
 		userMapper.createUser(user);
 		userMapper.createAuthorities(user);
@@ -59,6 +59,9 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
 		User user = userMapper.getUser(userId);
+		if (user == null) {
+			throw new UsernameNotFoundException("User was not found.");
+		}
 		user.setAuthorities(getAuthorities(userId));
 		return user;
 	}

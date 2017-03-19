@@ -15,13 +15,13 @@
 			 ,
 			   (
 					SELECT user_nm
-				      FROM t_user
+				      FROM tuser
 					 WHERE user_id = pjt_mgr
 			   ) AS managerName
 			 ,
 			   (
 					SELECT nick_nm
-				      FROM t_user
+				      FROM tuser
 					 WHERE user_id = pjt_mgr
 			   ) AS managerNick
 			 , pjt_catg AS projectCategory
@@ -34,7 +34,7 @@
 			 , tam.atvt_nm AS title
 			 , (
 			 		SELECT user_nm
-			 		  FROM t_user
+			 		  FROM tuser
 			 		 WHERE user_id = tam.allt_qa
 			   ) AS allotmentedQa
 			 , (

@@ -9,7 +9,7 @@
 			 , pjt_nm 		AS name
 			 , (
 				SELECT user_nm
-			      FROM t_user
+			      FROM tuser
 				 WHERE user_id = p.pjt_mgr
 			 ) 				AS managerName
 	  	  FROM t_pjt p
@@ -41,7 +41,7 @@
 						   (
 								SELECT (
 											SELECT user_nm
-							                  FROM t_user
+							                  FROM tuser
 											 WHERE user_id = p.pjt_mgr
 									   )
 							      FROM t_pjt p
@@ -53,7 +53,7 @@
 							      FROM t_role
 								 WHERE role_cd = tpu.user_role
 						   ) AS myRole
-					 FROM t_pjt_user tpu	
+					 FROM t_pjtuser tpu	
 					WHERE tpu.user_id = #{userId}
 			    ) a
 		  ORDER BY a.sequence DESC

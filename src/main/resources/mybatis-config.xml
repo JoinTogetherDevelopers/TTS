@@ -7,6 +7,9 @@
 	<typeAliases>
 		<package name="org.dorageecorp" />
 	</typeAliases>
+	<typeHandlers>
+		<typeHandler handler="org.dorageecorp.security.AuthorityTypeHandler"/>
+	</typeHandlers>
 	<mappers>
 		<mapper resource="mapper/activity/ActivityMapper.xml" />
 		<mapper resource="mapper/board/BoardMapper.xml" />

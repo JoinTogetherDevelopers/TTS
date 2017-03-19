@@ -15,7 +15,7 @@
 			   )										AS activityStatus
 			 , (
 			 	SELECT username
-			 	  FROM t_user
+			 	  FROM tuser
 			 	 WHERE user_id = crer_id
 			   )										AS creatorName
 			 , DATE_FORMAT(cre_ymdt, "%Y-%m-%d %H:%i")	AS createDate
@@ -39,7 +39,7 @@
 			   )										AS activityStatus
 			 , (
 			 	SELECT username
-			 	  FROM t_user
+			 	  FROM tuser
 			 	 WHERE user_id = crer_id
 			   )										AS creatorName
 			 , DATE_FORMAT(cre_ymdt, "%Y-%m-%d %H:%i")	AS createDate

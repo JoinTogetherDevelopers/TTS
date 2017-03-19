@@ -25,8 +25,8 @@ public class TTSWebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.authorizeRequests().anyRequest().authenticated().and().formLogin().loginPage("/login")
-				.defaultSuccessUrl("/main").failureUrl("/login?error").permitAll().and().logout()
+		http.authorizeRequests().antMatchers("/console/*").permitAll().anyRequest().authenticated().and().formLogin()
+				.loginPage("/login").defaultSuccessUrl("/main").failureUrl("/login?error").permitAll().and().logout()
 				.logoutSuccessUrl("/login").permitAll().and().httpBasic();
 		http.csrf().disable();
 		// TODO 세션관리기능 추가시 사용예정
@@ -35,7 +35,7 @@ public class TTSWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/resources/**");
+		web.ignoring().antMatchers("/resources/**", "/console/*");
 	}
 
 	/*

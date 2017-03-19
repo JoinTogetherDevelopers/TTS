@@ -26,7 +26,7 @@
 	         , tjm.job_mst_nm				             				             
 	         , (
 					SELECT user_nm
-					  FROM t_user
+					  FROM tuser
 					 WHERE user_id = tjm.crer_id
 			    ) AS crer_user_name
 	         , DATE_FORMAT(tjm.cre_ymdt, '%y-%m-%d %h:%i') AS cre_ymdt
@@ -51,7 +51,7 @@
              , job.job_tc_cnt		AS testCaseCount
              , (
 					SELECT user_nm
-			      	  FROM t_user
+			      	  FROM tuser
 				 	 WHERE user_id = job.crer_id
 			   ) 					AS creatorName
              , DATE_FORMAT(job.cre_ymdt,'%y-%m-%d %h:%i')	AS createdDate
@@ -92,13 +92,13 @@
 			   ) 					AS jobStatus
 			 , (
 					SELECT user_nm
-			          FROM t_user
+			          FROM tuser
 				 	 WHERE user_id = tjm.crer_id
 			   ) 					AS creatorName
 			 , DATE_FORMAT(tjm.cre_ymdt, '%y-%m-%d %h:%i') AS createdDate
 			 , (
 					SELECT user_nm
-			          FROM t_user
+			          FROM tuser
 					 WHERE user_id = tjm.modr_id
 			 ) 						AS modifyerName
 			 , DATE_FORMAT(tjm.mod_ymdt, '%y-%m-%d %h:%i') AS modifyedDate
@@ -137,13 +137,13 @@
 			 , tjm.job_mst_uprcd
 			 , ( 	
 			 		SELECT user_nm
-					  FROM t_user
+					  FROM tuser
 					 WHERE user_id = tjm.crer_id
 			   ) AS crer_nm
 			 , tjm.cre_ymdt
 			 , (
 			 		SELECT user_nm
-					  FROM t_user
+					  FROM tuser
 					 WHERE user_id = tjm.modr_id
 			   ) AS modr_nm
 			 , tjm.mod_ymdt

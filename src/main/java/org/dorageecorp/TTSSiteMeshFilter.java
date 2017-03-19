@@ -19,6 +19,7 @@ public class TTSSiteMeshFilter extends ConfigurableSiteMeshFilter {
 		builder.addDecoratorPath("/kcmsus/**", "/WEB-INF/views/layout/projectLayout.jsp");
 		builder.addExcludedPath("/noneProject");
 		builder.addExcludedPath("/register");
+		builder.addExcludedPath("/console/*");
 	}
 
 }
