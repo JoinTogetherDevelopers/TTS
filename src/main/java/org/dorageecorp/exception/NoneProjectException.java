@@ -1,13 +1,14 @@
 package org.dorageecorp.exception;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@SuppressWarnings("serial")
-@Data
+@Getter
+@Setter
 public class NoneProjectException extends RuntimeException {
-	private String message;
-	
-	public NoneProjectException(String message) {
-		this.message = message;
-	}
+    private String message;
+
+    public NoneProjectException(String message) {
+        this.message = message;
+    }
 }

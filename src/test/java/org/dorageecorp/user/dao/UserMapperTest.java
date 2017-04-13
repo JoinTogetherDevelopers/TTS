@@ -3,6 +3,7 @@ package org.dorageecorp.user.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.extern.slf4j.Slf4j;
 import org.dorageecorp.user.bo.UserService;
 import org.dorageecorp.user.model.User;
 import org.junit.Test;
@@ -15,6 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Slf4j
 public class UserMapperTest {
 
 	@Autowired
@@ -34,7 +36,7 @@ public class UserMapperTest {
 		userService.createUser(user);
 		User result = userService.getUser("myId");
 
-		result.getAuthorities().forEach(e -> System.out.println(e.getAuthority()));
+		result.getAuthorities().forEach(e -> log.info(e.getAuthority()));
 
 	}
 
